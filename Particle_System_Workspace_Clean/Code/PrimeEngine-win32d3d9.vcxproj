@@ -241,6 +241,7 @@
     <ClInclude Include="PrimeEngine\Scene\Particle.h" />
     <ClInclude Include="PrimeEngine\Scene\ParticleManager.h" />
     <ClInclude Include="PrimeEngine\Scene\ParticleRenderer.h" />
+    <ClInclude Include="PrimeEngine\Scene\ParticleSystem.h" />
     <ClInclude Include="PrimeEngine\Scene\RootSceneNode.h" />
     <ClInclude Include="PrimeEngine\Scene\SH_DRAW.h" />
     <ClInclude Include="PrimeEngine\Scene\SceneNode.h" />
@@ -402,6 +403,7 @@
     <ClCompile Include="PrimeEngine\Scene\Particle.cpp" />
     <ClCompile Include="PrimeEngine\Scene\ParticleManager.cpp" />
     <ClCompile Include="PrimeEngine\Scene\ParticleRenderer.cpp" />
+    <ClCompile Include="PrimeEngine\Scene\ParticleSystem.cpp" />
     <ClCompile Include="PrimeEngine\Scene\RootSceneNode.cpp" />
     <ClCompile Include="PrimeEngine\Scene\SH_DRAW.cpp" />
     <ClCompile Include="PrimeEngine\Scene\SceneNode.cpp" />

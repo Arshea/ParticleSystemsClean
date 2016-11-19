@@ -1068,6 +1068,9 @@
     <ClInclude Include="PrimeEngine\Scene\ParticleRenderer.h">
       <Filter>PrimeEngine\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="PrimeEngine\Scene\ParticleSystem.h">
+      <Filter>PrimeEngine\Scene</Filter>
+    </ClInclude>
     <ClInclude Include="PrimeEngine\Scene\RootSceneNode.h">
       <Filter>PrimeEngine\Scene</Filter>
     </ClInclude>
@@ -1545,6 +1548,9 @@
       <Filter>PrimeEngine\Scene</Filter>
     </ClCompile>
     <ClCompile Include="PrimeEngine\Scene\ParticleRenderer.cpp">
+      <Filter>PrimeEngine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="PrimeEngine\Scene\ParticleSystem.cpp">
       <Filter>PrimeEngine\Scene</Filter>
     </ClCompile>
     <ClCompile Include="PrimeEngine\Scene\RootSceneNode.cpp">

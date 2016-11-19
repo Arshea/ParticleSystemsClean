@@ -37,10 +37,8 @@ namespace PE {
 		ParticleManager::ParticleManager(PE::GameContext &context, PE::MemoryArena arena, Handle hMyself)
 			: Component(context, arena, hMyself)
 		{
+			pSysTest = ParticleSystem();
 		}
 
-		void ParticleManager::startTestSystem() {
-			//pSysTest = new PSysSceneNode();
-		}
 	}
 }

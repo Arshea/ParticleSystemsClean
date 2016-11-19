@@ -11,9 +11,6 @@
 #include "PrimeEngine/Scene/SceneNode.h"
 #include "PrimeEngine/Render/IRenderer.h"
 
-// Particle system test -- can remove from here later
-#include "PrimeEngine/Scene/ParticleRenderer.h"
-
 using namespace PE::Components;
 using namespace PE::Events;
 using namespace CharacterControl::Events;
@@ -109,6 +106,10 @@ void SoldierNPCBehaviorSM::do_PRE_RENDER_needsRC(PE::Events::Event *pEvt)
 	SoldierNPC *pSol = getFirstParentByTypePtr<SoldierNPC>();
 	PE::Handle hSoldierSceneNode = pSol->getFirstComponentHandle<PE::Components::SceneNode>();
 	Matrix4x4 base = hSoldierSceneNode.getObject<PE::Components::SceneNode>()->m_worldTransform;
+
+	if (!h_pManager.isValid()) {
+		h_pManager = m_pContext->getParticleManager();
+	}
 
 	Vector3 pSystemTemp[600];
 	//pSystemTemp[0] = Vector3(0.0f, 0.0f, 0.0f);

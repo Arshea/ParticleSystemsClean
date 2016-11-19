@@ -11,17 +11,12 @@
 // Inter-Engine includes
 #include "PrimeEngine/MemoryManagement/Handle.h"
 #include "PrimeEngine/PrimitiveTypes/PrimitiveTypes.h"
-#include "../Events/Component.h"
 #include "../Utils/Array/Array.h"
-#include "../Geometry/MeshCPU/MeshCPU.h"
 #include "../Math/Matrix4x4.h"
 
-#include "PrimeEngine/APIAbstraction/GPUBuffers/VertexBufferGPU.h"
-#include "PrimeEngine/APIAbstraction/GPUBuffers/IndexBufferGPU.h"
-
-#include "PrimeEngine/APIAbstraction/Effect/Effect.h"
-
 #include "PrimeEngine/Scene/PSysSceneNode.h"
+#include "PrimeEngine/Scene/ParticleSystem.h"
+#include "PrimeEngine/Scene/ParticleRenderer.h"
 
 // Sibling/Children includes
 
@@ -30,12 +25,15 @@ namespace PE {
 
 		struct ParticleManager : Component
 		{
-			PSysSceneNode *pSysTest; // Change to array
+			ParticleSystem pSysTest; // Change to array
 
 			PE_DECLARE_CLASS(ParticleManager);
 			ParticleManager(PE::GameContext &context, PE::MemoryArena arena, Handle hMyself);
 
-			void startTestSystem();
+			//ParticleManager::ParticleManager() {};
+			void print() {
+				// Add loop for systems
+			}
 
 		};
 

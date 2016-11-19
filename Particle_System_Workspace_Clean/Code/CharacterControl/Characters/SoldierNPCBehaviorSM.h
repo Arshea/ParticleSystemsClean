@@ -3,6 +3,7 @@
 
 
 #include "PrimeEngine/Events/Component.h"
+#include "PrimeEngine/Scene/ParticleManager.h"
 
 #include "../Events/Events.h"
 
@@ -47,6 +48,9 @@ struct SoldierNPCBehaviorSM : public PE::Components::Component
 	bool m_havePatrolWayPoint;
 	char m_curPatrolWayPoint[32];
 	States m_state;
+
+	// PSYSTEM (should not go here olol)
+	PE::Handle h_pManager;
 };
 
 };
