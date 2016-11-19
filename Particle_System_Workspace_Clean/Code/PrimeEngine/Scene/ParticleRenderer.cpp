@@ -61,7 +61,7 @@ namespace PE {
 		}
 		
 	
-		void ParticleRenderer::createPSysMesh(const Vector3 *pSyst, float timeToLive, Vector3 pos, Matrix4x4 *base, float scale, int &threadOwnershipMask)
+		void ParticleRenderer::createPSysMesh(const Particle *pSyst, float timeToLive, Vector3 pos, float scale, int &threadOwnershipMask)
 		{
 			if (EnableDebugRendering && m_numAvaialble)
 			{
@@ -86,10 +86,11 @@ namespace PE {
 
 				PSysSceneNode::DrawType drawType = PSysSceneNode::Overlay2D_3DPos;
 
-				Vector3 newPSyst[600];
+				Particle newPSyst[1000];
 
-				for (int i = 0; i < 600; i++) {
-					newPSyst[i] = pPSysSN->particle_PVWMatrix * (pSyst[i]);
+				for (int i = 0; i < 1000; i++) {
+					newPSyst[i] = pSyst[i];
+					newPSyst[i].position = pPSysSN->particle_PVWMatrix * (pSyst[i].position);
 					//newPSyst[i] = base->inverse() * newPSyst[i];
 				}
 

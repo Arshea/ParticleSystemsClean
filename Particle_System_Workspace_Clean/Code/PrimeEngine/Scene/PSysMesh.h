@@ -14,6 +14,8 @@
 // Sibling/Children includes
 #include "Mesh.h"
 
+#include "Particle.h"
+
 namespace PE {
 	namespace Components {
 
@@ -34,7 +36,7 @@ namespace PE {
 			PE_DECLARE_IMPLEMENT_EVENT_HANDLER_WRAPPER(do_GATHER_DRAWCALLS);
 			virtual void do_GATHER_DRAWCALLS(Events::Event *pEvt);
 
-			void loadFromString_needsRC(const Vector3 *pSyst, const char *techName, int &threadOwnershipMask);
+			void loadFromString_needsRC(const Particle *pSyst, const char *techName, int &threadOwnershipMask);
 
 			PrimitiveTypes::Float32 m_charW, m_charWAbs, m_charH, m_textLength;
 			PrimitiveTypes::Bool m_loaded;

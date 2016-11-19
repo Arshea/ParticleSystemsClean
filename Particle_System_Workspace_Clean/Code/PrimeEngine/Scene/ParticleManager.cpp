@@ -40,5 +40,15 @@ namespace PE {
 			pSysTest = ParticleSystem();
 		}
 
+		void ParticleManager::updateSystems(int &threadOwnershipMask) {
+			pSysTest.update();
+			print(threadOwnershipMask);
+		}
+
+		void ParticleManager::print(int &threadOwnershipMask) {
+			ParticleRenderer::Instance()->createPSysMesh(
+				pSysTest.getParticles(), 0, Vector3(0.0f, 0.0f, 0.0f), 0.01f, threadOwnershipMask);
+		}
+
 	}
 }

@@ -32,9 +32,9 @@ namespace PE {
 			Mesh::addDefaultComponents();
 		}
 
-		void PSysMesh::loadFromString_needsRC(const Vector3 *pSyst, const char *techName, int &threadOwnershipMask)
+		void PSysMesh::loadFromString_needsRC(const Particle *pSyst, const char *techName, int &threadOwnershipMask)
 		{
-			int len = 4;
+			int len = 1000;
 			int indextorender = 0; // Render from this pos in array
 
 
@@ -70,7 +70,7 @@ namespace PE {
 			pIB->m_minVertexIndex = pIB->m_indexRanges[0].m_minVertIndex;
 			pIB->m_maxVertexIndex = pIB->m_indexRanges[0].m_maxVertIndex;
 
-			float w = 2.0f;
+			float w = 1.0f;
 			float h = 2.0f;
 
 
@@ -83,14 +83,21 @@ namespace PE {
 			float pixSize2 = 1.0f / 512.0f / 2.0f;
 			for (int ic = indextorender; ic < indextorender+len; ic++)
 			{
-				float curX = pSyst[ic].getX();
-				float curY = pSyst[ic].getY();
+				float curX = pSyst[ic].position.getX();
+				float curY = pSyst[ic].position.getY();
 
-				{
+				// Adjust size based on particle properties
+				w = 1.0f * pSyst[ic].size;
+				h = 2.0f * pSyst[ic].size;
+
+				// Adjust size based on proximity
+				///////////////////////////////////
+
+				/*{
 					char buf[500];
-					sprintf(buf, "from mesh: %d: %f, %f, %f; printing to position: %f, %f\n", ic, pSyst[ic].getX(), pSyst[ic].getY(), pSyst[ic].getZ(), curX, curY);
+					sprintf(buf, "from mesh: %d: %f, %f, %f; printing to position: %f, %f\n", ic, pSyst[ic].position.getX(), pSyst[ic].position.getY(), pSyst[ic].position.getZ(), curX, curY);
 					OutputDebugStringA(buf);
-				}
+				}*/
 
 				char c = 'o';
 				int row = int(c) / 16;

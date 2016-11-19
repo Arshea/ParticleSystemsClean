@@ -30,10 +30,10 @@ namespace PE {
 			PE_DECLARE_CLASS(ParticleManager);
 			ParticleManager(PE::GameContext &context, PE::MemoryArena arena, Handle hMyself);
 
+			void updateSystems(int &threadOwnershipMask);
+
 			//ParticleManager::ParticleManager() {};
-			void print() {
-				// Add loop for systems
-			}
+			void print(int &threadOwnershipMask);
 
 		};
 

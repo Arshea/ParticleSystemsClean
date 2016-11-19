@@ -42,7 +42,7 @@ namespace PE {
 		}
 
 
-		void PSysSceneNode::loadFromString_needsRC(const Vector3 *pSyst, DrawType drawType, int &threadOwnershipMask)
+		void PSysSceneNode::loadFromString_needsRC(const Particle *pSyst, DrawType drawType, int &threadOwnershipMask)
 		{
 			m_drawType = drawType;
 
@@ -125,6 +125,15 @@ namespace PE {
 				m_worldTransform = m_worldTransform * scale;
 
 				particle_scale = scale;
+
+				// Attempt to change overall size based on proximity to camera ------------------------------------------------------------------------
+				Vector3 distanceToCam = m_base.getPos() - pDrawEvent->m_eyePos;
+				float distToCam = distanceToCam.length();
+				float proximityFactor = 20.0f / distToCam;
+				Matrix4x4 proximityScale;
+				proximityScale.importScale(proximityFactor, proximityFactor/m_cachedAspectRatio, 1.f);
+				m_worldTransform = m_worldTransform * proximityScale;
+				// ------------------------------------------------------------------------------------------------------------------------------------
 			}
 			if (m_drawType == Overlay2D)
 			{

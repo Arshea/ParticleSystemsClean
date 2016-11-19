@@ -110,8 +110,10 @@ void SoldierNPCBehaviorSM::do_PRE_RENDER_needsRC(PE::Events::Event *pEvt)
 	if (!h_pManager.isValid()) {
 		h_pManager = m_pContext->getParticleManager();
 	}
+	h_pManager.getObject<ParticleManager>()->updateSystems(pRealEvent->m_threadOwnershipMask);
+	
 
-	Vector3 pSystemTemp[600];
+	/*Vector3 pSystemTemp[600];
 	//pSystemTemp[0] = Vector3(0.0f, 0.0f, 0.0f);
 	for (int i = 0; i < 200; i++) {
 		pSystemTemp[i] = Vector3(0.0f, (float)i, 0.0f);
@@ -131,7 +133,7 @@ void SoldierNPCBehaviorSM::do_PRE_RENDER_needsRC(PE::Events::Event *pEvt)
 	pSystemTemp[6] = Vector3(0.0f, 0.0f, -100.0f);
 
 	ParticleRenderer::Instance()->createPSysMesh(
-		pSystemTemp, 0, Vector3(0.0f,0.0f,0.0f), &base, 0.01f, pRealEvent->m_threadOwnershipMask);
+		pSystemTemp, 0, Vector3(0.0f,0.0f,0.0f), &base, 0.01f, pRealEvent->m_threadOwnershipMask);*/
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 
 

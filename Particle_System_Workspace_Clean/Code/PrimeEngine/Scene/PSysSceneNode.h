@@ -48,7 +48,7 @@ namespace PE {
 				Overlay2D,
 				Overlay2D_3DPos
 			};
-			void loadFromString_needsRC(const Vector3 *pSyst, DrawType drawType, int &threadOwnershipMask);
+			void loadFromString_needsRC(const Particle *pSyst, DrawType drawType, int &threadOwnershipMask);
 
 			DrawType m_drawType;
 			float m_scale;

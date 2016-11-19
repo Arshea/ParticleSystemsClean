@@ -15,6 +15,7 @@
 #include "../Math/Vector3.h"
 #include "../Math/Matrix4x4.h"
 #include "SceneNode.h"
+#include "Particle.h"
 
 // Particle system contents
 
@@ -51,7 +52,7 @@ namespace PE {
 			virtual ~ParticleRenderer() {}
 			// Methods      ------------------------------------------------------------
 
-			void createPSysMesh(const Vector3 *pSyst, float timeToLive, Vector3 pos, Matrix4x4 *base, float scale,
+			void createPSysMesh(const Particle *pSyst, float timeToLive, Vector3 pos, float scale,
 				int &threadOwnershipMask);
 			
 			PE_DECLARE_IMPLEMENT_EVENT_HANDLER_WRAPPER(do_PRE_GATHER_DRAWCALLS);
